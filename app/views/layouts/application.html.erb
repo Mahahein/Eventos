@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Orden de pedidos</title>
+    <%= stylesheet_link_tag    "application", media: "all" %>
+    <%= javascript_include_tag "application" %>
+    <%= csrf_meta_tags %>
+  </head>
+  <body>
+    <%= render 'layouts/header'%>
+    <% if flash[:notice] %>
+    	<div class="notice"><%= flash[:notice] %></div>
+  	<% end %>
+    <div class="container">
+      <%= yield %>
+    </div>
+  </body>
+  <%= render 'layouts/footer'%>
+</html>

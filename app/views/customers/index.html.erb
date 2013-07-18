@@ -1,0 +1,27 @@
+<br/><br/>
+<h1>Lista de Clientes</h1>
+<table id="products" class="display">
+  <thead>
+    <tr>
+      <th>Nombre</th>
+      <th>Direccion</th>
+      <th>Ciudad</th>
+      <th>Email</th>
+      <th>Acciones</th>
+    </tr>
+  </thead>
+  <tbody>
+    <% @customers.each do |customer| %>
+      <tr>
+        <td><center><%= link_to customer.name, customer_path(customer) %></center></td>
+        <td><center><%= customer.address %>, <%= customer.number %></center></td>
+        <td><center><%= customer.city %></center></td>
+        <td><center><%= customer.email %></center></td>
+        <td><center><%= link_to 'Editar', edit_customer_path(customer), :class => 'btn btn-mini' %>
+        <%= link_to 'Eliminar', customer_path(customer), :method => :delete, :confirm => t('.confirm', :default => t("helpers.links.confirm", :default => '¿Confirma eliminar?')), :class => 'btn btn-mini btn-danger' %></center></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+<br>
+<%= link_to 'Agregar', new_customer_path, :class => 'btn btn-primary' %>

@@ -1,0 +1,7 @@
+<% if @item.errors.empty? %>
+	$("#item_listing").html("<%= j render 'events/item_list' %>");		
+<% else %>
+	alert("<%= j @item.errors.full_messages.join('/n') %> ");
+<% end %>	
+
+

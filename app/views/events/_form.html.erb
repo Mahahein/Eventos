@@ -1,0 +1,43 @@
+<%= form_for @event, :html => { :class => 'form-horizontal' } do |f| %>
+  <div class="control-group">
+    <%= f.label 'Nombre pedido', :class => 'control-label' %>
+    <div class="controls">
+      <%= f.text_field :name, :class => 'text_field' %>
+    </div>
+  </div>
+  <div class="control-group">
+    <%= f.label 'Cliente', :class => 'control-label' %>
+    <div class="controls">
+      <%= f.collection_select :customer_id, Customer.all, :id, :name, {:prompt => true} %>
+    </div>
+  </div>
+  <div class="control-group">
+    <%= f.label 'Fecha solicitud', :class => 'control-label' %>
+    <div class="controls">
+      <%= f.date_select :date_request, :class => 'date_select', :event => [:day, :month, :year]%>
+    </div>
+  </div>
+  <div class="control-group">
+    <%= f.label 'Fecha pedido', :class => 'control-label' %>
+    <div class="controls">
+      <%= f.date_select :start_at, :class => 'date_select', :event => [:day, :month, :year]%>
+    </div>
+  </div>
+  <div class="control-group">
+    <%= f.label 'Fecha retorno', :class => 'control-label' %>
+    <div class="controls">
+      <%= f.date_select :end_at, :class => 'date_select', :event => [:day, :month, :year]%>
+    </div>
+  </div>
+  <div class="control-group">
+    <%= f.label 'Descuento', :class => 'control-label' %>
+    <div class="controls">
+      <%= f.text_field :discount, :class => 'text_field' %>
+    </div>
+  </div>
+  
+  <div class="form-actions">
+    <%= f.submit 'Guardar', :class => 'btn btn-primary' %>
+    <%= link_to 'Cancelar', events_path, :class => 'btn' %>
+  </div>
+<% end %>

@@ -1,0 +1,20 @@
+<br/><br/>
+<h1>Lista de usuarios</h1>
+<table id="products" class="display">
+  <thead>
+    <tr>
+      <th>Nombre</th>
+      <th>Acciones</th>
+    </tr>
+  </thead>
+  <tbody>
+    <% @users.each do |user| %>
+      <tr>
+        <td><center><%= user.email %></center></td>
+        <td><center><%= link_to "Editar", edit_user_registration_path(user) %></center></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+<br>
+<%= link_to 'Agregar', new_user_registration_path, :class => 'btn btn-primary' %>

@@ -1,0 +1,25 @@
+<br/><br/>
+<h1 align="center">Productos</h1>
+<table id="products" class="display">
+  <thead>
+    <tr>
+      <th>Nombre</th>
+      <th>Valor</th>
+      <th>Categoria</th>
+      <th>Acciones</th>
+    </tr>
+  </thead>
+  <tbody>
+    <% @products.each do |product| %>
+      <tr>
+        <td><center><%= product.name %></center></td>
+        <td><center><%= product.price %></center></td>
+        <td><center><%= product.category.name %></center></td>
+        <td><center><%= link_to 'Editar', edit_product_path(product), :class => 'btn btn-mini' %>
+        <%= link_to 'Eliminar', product_path(product), :method => :delete, :confirm => t('.confirm', :default => t("helpers.links.confirm", :default => 'Confirma exclusão?')), :class => 'btn btn-mini btn-danger' %></center></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+<br>
+<%= link_to 'Agregar', new_product_path, :class => 'btn btn-primary' %>

@@ -1,0 +1,22 @@
+<br/><br/>
+<h1 align="center">Categorias</h1>
+<table id="products" class="display">
+  <thead>
+    <tr>
+      <th>Nombre</th>
+      <th>Acciones</th>
+    </tr>
+  </thead>
+  <tbody>
+    <% @categories.each do |category| %>
+      <tr>
+        <td><center><%= link_to category.name, category_path(category) %></center></td>
+
+        <td><center><%= link_to 'Editar', edit_category_path(category), :class => 'btn btn-mini' %>
+        <%= link_to 'Eliminar', category_path(category), :method => :delete, :confirm => t('.confirm', :default => t("helpers.links.confirm", :default => '¿Confirma eliminar?')), :class => 'btn btn-mini btn-danger' %></center></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+<br>
+<%= link_to 'Agregar', new_category_path, :class => 'btn btn-primary' %>

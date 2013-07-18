@@ -1,0 +1,34 @@
+<script type="text/javascript">
+$(document).ready;
+
+
+</script>
+
+
+
+<br/><br/>
+
+<%= render :partial => @event %>
+
+<table class="table table-striped">
+  <thead>
+		<caption>Lista de productos</caption>
+		<tr>
+			<th>Producto</th><th>Cantidad</th><th>Valor</th><th>Total</th><th></th>
+		</tr>
+  </thead>
+	<tbody id='item_listing'>
+		<%= render :partial => 'item_list' %>
+	</tbody>
+	<tbody id='item_form'>
+		<%= render :partial => 'item_form' %>
+	</tbody>
+</table>
+
+<div class="form-actions">
+  <%= link_to 'Volver', events_path, :class => 'btn'  %>
+  <%= link_to 'Editar', edit_event_path(@event), :class => 'btn' %>
+  <%= link_to 'Exportar a PDF', event_path(@event, :format => "pdf"), :class => 'btn' %>
+  <%= link_to 'Eliminar', event_path(@event), :method => 'delete', :confirm => t('.confirm', :default => t("helpers.links.confirm", :default => '¿Confirma eliminar?')), :class => 'btn btn-danger' %>
+  
+</div>

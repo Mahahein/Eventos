@@ -1,0 +1,18 @@
+<% @event.items.each do |a| %>
+	<tr>
+		<td><%= a.product.name %></td>
+		<td><%= a.quantity%></td>
+		<td><%= Moneda(a.price) %></td>
+		<td><%= Moneda(a.quantity * a.price) %></td>
+		<td><%= link_to 'Cancelar', [@event, a], confirm: '¿Confirma eliminar?', method: :delete, remote: true %></td>
+	</tr>
+<% end %>
+<%if @event.items.count > 0 %>
+	<tr>
+		<td></td>
+		<td><%= @event.totalquantity %></td>
+		<td><%= Moneda(@event.totalprice) %></td>
+		<td><%= Moneda(@event.totaldiscount) %></td>
+		<td></td>
+	</tr>
+<%end%>

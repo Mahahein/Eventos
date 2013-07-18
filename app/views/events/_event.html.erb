@@ -1,0 +1,13 @@
+<dl class="dl-horizontal">
+  <h2><center><%= @event.name %></center></h2>
+  <dt>Cliente:</strong></dt>
+  <dd><%= @event.customer.name %></dd>
+  <dt>Fecha solicitud:</dt>
+  <dd><%= @event.date_request.strftime("%d/%m/%Y") %></dd>
+  <dt>Fecha pedido:</dt>
+  <dd><%= @event.start_at.strftime("%d/%m/%Y") %></dd>
+  <dt>Fecha recepción:</dt>
+  <dd><%= @event.end_at.strftime("%d/%m/%Y") %></dd>
+  <dt>Descuento:</dt>
+  <dd><%= Porcentaje(@event.discount) %></dd>  
+</dl>
