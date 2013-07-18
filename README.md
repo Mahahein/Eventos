@@ -1,2 +1,8 @@
-# Ruby on Rails Event Calendar
-Second application to learn and test the power of ruby on rails
+# GEVENT
+
+Aplicación para la Gestión de un Centro de Eventos.
+<td>Puedes administrar:
+<td>-Clientes
+<td>-Productos
+<td>-Eventos
+<td>-Agenda
