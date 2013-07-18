@@ -1,5 +1,4 @@
-# GEVENT
-
+# GESTIVENT0
 Aplicación para la Gestión de un Centro de Eventos.
 <td>Puedes administrar:
 <td>-Clientes
